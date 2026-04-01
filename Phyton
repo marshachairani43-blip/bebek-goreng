@@ -1,0 +1,20 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# Data simulasi menu (agar lebih dinamis)
+menus = [
+    {"nama": "Rawon Malang", "harga": "Rp 25.000", "img": "rawon.jpg"},
+    {"nama": "Nasi Gudeg", "harga": "Rp 18.000", "img": "gudeg.jpg"},
+    {"nama": "Tempe Mendoan", "harga": "Rp 5.000", "img": "mendoan.jpg"},
+    {"nama": "Siomay Bandung", "harga": "Rp 15.000", "img": "siomay.jpg"},
+    {"nama": "Klepon Hijau", "harga": "Rp 10.000", "img": "klepon.jpg"},
+    {"nama": "Ayam Kalasan", "harga": "Rp 27.000", "img": "ayam.jpg"},
+]
+
+@app.route('/')
+def home():
+    return render_template('index.html', menus=menus)
+
+if __name__ == '__main__':
+    app.run(debug=True)
