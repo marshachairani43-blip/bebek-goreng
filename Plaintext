@@ -1,0 +1,6 @@
+/my-restaurant-app
+│-- app.py (File Python)
+│-- templates/
+│   └── index.html (File HTML)
+│-- static/
+│   └── style.css (File CSS)
