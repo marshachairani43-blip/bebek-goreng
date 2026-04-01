@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai Fauget - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">Kedai Fauget</div>
+            <ul>
+                <li class="active">Dasbor</li>
+                <li>Beranda</li>
+                <li>Profil</li>
+                <li>Pengaturan</li>
+                <li>Pesanan</li>
+            </ul>
+            <div class="logout">Logout</div>
+        </nav>
+
+        <main class="content">
+            <header>
+                <input type="text" placeholder="Cari menu...">
+                <div class="user-profile">Ketut Susilo</div>
+            </header>
+
+            <section class="menu-grid">
+                {% for item in menus %}
+                <div class="card">
+                    <div class="image-placeholder"></div>
+                    <h3>{{ item.nama }}</h3>
+                    <p>{{ item.harga }}</p>
+                    <button>+</button>
+                </div>
+                {% endfor %}
+            </section>
+        </main>
+    </div>
+</body>
+</html>
